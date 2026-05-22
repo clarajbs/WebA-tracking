@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atelier Forma — Studio de design</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-569SKPWB');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-569SKPWB"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager -->
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Atelier<em>Forma</em></div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="openModal('modal-studio'); return false;">Studio</a></li>
+      <li><a href="#" onclick="openModal('modal-contact'); return false;">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-text">
+      <span class="hero-tag">Studio de design — Paris</span>
+      <h1>Nous façonnons<br/><em>des expériences</em><br/>mémorables.</h1>
+      <p>Un atelier indépendant spécialisé en identité visuelle, direction artistique et design digital.</p>
+      <button class="btn-primary" onclick="openModal('modal-studio')">En savoir plus</button>
+    </div>
+    <div class="hero-visual">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="section-header">
+      <span class="section-tag">// Ce que nous faisons</span>
+      <h2>Nos expertises</h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Identité visuelle</h3>
+        <p>Logo, charte graphique, système de design — une identité qui dure et qui raconte votre histoire.</p>
+        <button class="btn-learn" onclick="openModal('modal-identite')">En savoir plus →</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Direction artistique</h3>
+        <p>Shootings, campagnes, contenus visuels — une cohérence à chaque prise de parole.</p>
+        <button class="btn-learn" onclick="openModal('modal-da')">En savoir plus →</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Design digital</h3>
+        <p>Interfaces web et mobile pensées pour l'usage, conçues pour l'émotion.</p>
+        <button class="btn-learn" onclick="openModal('modal-digital')">En savoir plus →</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHIFFRES -->
+  <section class="numbers">
+    <div class="number-item">
+      <span class="number-val">12</span>
+      <span class="number-label">Ans d'expérience</span>
+    </div>
+    <div class="number-divider"></div>
+    <div class="number-item">
+      <span class="number-val">200+</span>
+      <span class="number-label">Projets livrés</span>
+    </div>
+    <div class="number-divider"></div>
+    <div class="number-item">
+      <span class="number-val">40</span>
+      <span class="number-label">Clients actifs</span>
+    </div>
+    <div class="number-divider"></div>
+    <div class="number-item">
+      <span class="number-val">8</span>
+      <span class="number-label">Prix reçus</span>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>Un projet en tête ?</h2>
+    <p>Parlons-en autour d'un café — réel ou virtuel.</p>
+    <button class="btn-primary" onclick="openModal('modal-contact')">Nous contacter</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Atelier<em>Forma</em></div>
+    <p class="footer-copy">© 2025 — Paris, France</p>
+  </footer>
+
+  <!-- ═══════════════════════════════
+       POP-INS
+  ═══════════════════════════════ -->
+
+  <!-- Modal : Studio (avec photo) -->
+  <div class="modal-overlay" id="modal-studio" role="dialog" aria-modal="true" aria-labelledby="ms-title">
+    <div class="modal modal-wide">
+      <button class="modal-close" onclick="closeModal('modal-studio')" aria-label="Fermer">✕</button>
+      <div class="modal-photo-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&auto=format&fit=crop&q=80"
+          alt="Paysage montagne lac — libre de droit Unsplash"
+          class="modal-photo"
+        />
+        <div class="modal-photo-caption">© Unsplash — libre de droit</div>
+      </div>
+      <div class="modal-tag">Notre histoire</div>
+      <h2 id="ms-title">Le studio</h2>
+      <p>Fondé en 2013 par deux designers issus des Beaux-Arts de Paris, Atelier Forma est un studio indépendant qui croit que le design est avant tout une conversation entre une marque et ses publics.</p>
+      <p>Nous travaillons en petit comité — jamais plus de trois projets simultanés — pour garantir une attention totale à chaque client.</p>
+      <ul class="modal-list">
+        <li>Studio fondé à Paris en 2013</li>
+        <li>Équipe de 6 designers permanents</li>
+        <li>Clients : startups, institutions, marques de luxe</li>
+        <li>Membres de l'Alliance Française des Designers</li>
+      </ul>
+      <button class="btn-primary" onclick="closeModal('modal-studio')">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Modal : Identité -->
+  <div class="modal-overlay" id="modal-identite" role="dialog" aria-modal="true" aria-labelledby="mi-title">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-identite')" aria-label="Fermer">✕</button>
+      <div class="modal-tag">Expertise 01</div>
+      <h2 id="mi-title">Identité visuelle</h2>
+      <p>Une identité visuelle forte est le socle de toute communication de marque. Nous construisons des systèmes visuels durables, cohérents sur tous les supports.</p>
+      <ul class="modal-list">
+        <li>Création de logo & déclinaisons</li>
+        <li>Charte graphique complète</li>
+        <li>Système typographique & palette couleurs</li>
+        <li>Guidelines d'utilisation</li>
+        <li>Application sur supports imprimés</li>
+      </ul>
+      <p class="modal-pricing">À partir de <strong>3 500 €</strong> HT</p>
+      <button class="btn-primary" onclick="closeModal('modal-identite')">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Modal : DA -->
+  <div class="modal-overlay" id="modal-da" role="dialog" aria-modal="true" aria-labelledby="mda-title">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-da')" aria-label="Fermer">✕</button>
+      <div class="modal-tag">Expertise 02</div>
+      <h2 id="mda-title">Direction artistique</h2>
+      <p>La direction artistique, c'est l'art de donner une vision unifiée à l'ensemble des prises de parole d'une marque. Nous orchestrons votre univers visuel de bout en bout.</p>
+      <ul class="modal-list">
+        <li>Conception de moodboards & références</li>
+        <li>Direction de shootings photo & vidéo</li>
+        <li>Cohérence des campagnes publicitaires</li>
+        <li>Suivi éditorial des réseaux sociaux</li>
+      </ul>
+      <p class="modal-pricing">Sur devis selon périmètre</p>
+      <button class="btn-primary" onclick="closeModal('modal-da')">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Modal : Digital -->
+  <div class="modal-overlay" id="modal-digital" role="dialog" aria-modal="true" aria-labelledby="mdig-title">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-digital')" aria-label="Fermer">✕</button>
+      <div class="modal-tag">Expertise 03</div>
+      <h2 id="mdig-title">Design digital</h2>
+      <p>Sites web, applications mobiles, interfaces SaaS — nous concevons des expériences numériques qui allient clarté d'usage et identité forte. Livré en Figma, prêt pour les développeurs.</p>
+      <ul class="modal-list">
+        <li>UX Research & wireframing</li>
+        <li>UI Design haute fidélité (Figma)</li>
+        <li>Design system & composants</li>
+        <li>Prototypage interactif</li>
+        <li>Accompagnement développeurs</li>
+      </ul>
+      <p class="modal-pricing">À partir de <strong>4 800 €</strong> HT</p>
+      <button class="btn-primary" onclick="closeModal('modal-digital')">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Modal : Contact (formulaire) -->
+  <div class="modal-overlay" id="modal-contact" role="dialog" aria-modal="true" aria-labelledby="mc-title">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('modal-contact')" aria-label="Fermer">✕</button>
+
+      <!-- VUE : Formulaire -->
+      <div id="contact-form-view">
+        <div class="modal-tag">Travaillons ensemble</div>
+        <h2 id="mc-title">Nous contacter</h2>
+        <p style="margin-bottom:1.8rem;">Remplissez le formulaire ci-dessous, nous vous répondons sous 48h.</p>
+
+        <div class="form-group">
+          <label for="c-nom">Nom complet <span class="required">*</span></label>
+          <input type="text" id="c-nom" placeholder="Jean Dupont" />
+          <span class="field-error" id="err-nom">Veuillez renseigner votre nom.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="c-email">Adresse e-mail <span class="required">*</span></label>
+          <input type="email" id="c-email" placeholder="jean@exemple.fr" />
+          <span class="field-error" id="err-email">Veuillez entrer une adresse e-mail valide.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="c-sujet">Sujet <span class="required">*</span></label>
+          <select id="c-sujet">
+            <option value="">— Choisir un sujet —</option>
+            <option>Identité visuelle</option>
+            <option>Direction artistique</option>
+            <option>Design digital</option>
+            <option>Autre</option>
+          </select>
+          <span class="field-error" id="err-sujet">Veuillez choisir un sujet.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="c-message">Message <span class="required">*</span></label>
+          <textarea id="c-message" rows="4" placeholder="Décrivez votre projet en quelques lignes…"></textarea>
+          <span class="field-error" id="err-message">Veuillez écrire un message.</span>
+        </div>
+
+        <div id="form-global-error" class="global-error" style="display:none;">
+          ⚠️ Certains champs sont incomplets ou invalides. Merci de les corriger.
+        </div>
+
+        <button class="btn-primary" style="width:100%;margin-top:0.5rem;" onclick="submitContact()">
+          Envoyer ma demande
+        </button>
+      </div>
+
+      <!-- VUE : Confirmation -->
+      <div id="contact-success-view" style="display:none; text-align:center; padding: 2rem 0;">
+        <div class="success-icon">✓</div>
+        <h2 style="margin-bottom:1rem;">Demande envoyée !</h2>
+        <p style="margin-bottom:2rem;">Votre demande a bien été prise en compte.<br/>Nous vous répondons sous 48h.</p>
+        <button class="btn-primary" onclick="closeModal('modal-contact')">Fermer</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    /* ── MODAL ── */
+    function openModal(id) {
+      const overlay = document.getElementById(id);
+      overlay.classList.add('active');
+      document.body.classList.add('no-scroll');
+      overlay.querySelector('.modal-close').focus();
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.classList.remove('no-scroll');
+
+      // Reset formulaire contact à la fermeture
+      if (id === 'modal-contact') resetContactForm();
+    }
+
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) closeModal(this.id);
+      });
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape')
+        document.querySelectorAll('.modal-overlay.active').forEach(o => closeModal(o.id));
+    });
+
+    /* ── FORMULAIRE CONTACT ── */
+    function validateEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+    }
+
+    function setError(fieldId, errId, show) {
+      const field = document.getElementById(fieldId);
+      const err   = document.getElementById(errId);
+      if (show) {
+        field.classList.add('input-error');
+        err.style.display = 'block';
+      } else {
+        field.classList.remove('input-error');
+        err.style.display = 'none';
+      }
+    }
+
+    // Validation en temps réel au blur
+    ['c-nom','c-email','c-sujet','c-message'].forEach(id => {
+      document.getElementById(id).addEventListener('blur', () => validateField(id));
+      document.getElementById(id).addEventListener('input', () => {
+        // Effacer l'erreur dès que l'utilisateur retape
+        const errMap = {'c-nom':'err-nom','c-email':'err-email','c-sujet':'err-sujet','c-message':'err-message'};
+        setError(id, errMap[id], false);
+        document.getElementById('form-global-error').style.display = 'none';
+      });
+    });
+
+    function validateField(id) {
+      const val = document.getElementById(id).value;
+      const errMap = {'c-nom':'err-nom','c-email':'err-email','c-sujet':'err-sujet','c-message':'err-message'};
+      if (id === 'c-email') {
+        setError(id, errMap[id], !validateEmail(val));
+      } else {
+        setError(id, errMap[id], val.trim() === '' || val === '');
+      }
+    }
+
+    function submitContact() {
+      const nom     = document.getElementById('c-nom').value.trim();
+      const email   = document.getElementById('c-email').value.trim();
+      const sujet   = document.getElementById('c-sujet').value;
+      const message = document.getElementById('c-message').value.trim();
+
+      let valid = true;
+
+      setError('c-nom',     'err-nom',     nom === '');
+      setError('c-email',   'err-email',   !validateEmail(email));
+      setError('c-sujet',   'err-sujet',   sujet === '');
+      setError('c-message', 'err-message', message === '');
+
+      if (nom === '' || !validateEmail(email) || sujet === '' || message === '') {
+        valid = false;
+        document.getElementById('form-global-error').style.display = 'block';
+      }
+
+      if (valid) {
+        document.getElementById('form-global-error').style.display = 'none';
+        document.getElementById('contact-form-view').style.display   = 'none';
+        document.getElementById('contact-success-view').style.display = 'block';
+      }
+    }
+
+    function resetContactForm() {
+      ['c-nom','c-email','c-message'].forEach(id => {
+        document.getElementById(id).value = '';
+        document.getElementById(id).classList.remove('input-error');
+      });
+      document.getElementById('c-sujet').value = '';
+      document.getElementById('c-sujet').classList.remove('input-error');
+      ['err-nom','err-email','err-sujet','err-message'].forEach(id => {
+        document.getElementById(id).style.display = 'none';
+      });
+      document.getElementById('form-global-error').style.display = 'none';
+      document.getElementById('contact-form-view').style.display = 'block';
+      document.getElementById('contact-success-view').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

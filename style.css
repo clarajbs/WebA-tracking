@@ -1,0 +1,584 @@
+/* ═══════════════════════════════════════
+   ATELIER FORMA — style.css
+   Thème : élégance éditoriale, crème & noir
+═══════════════════════════════════════ */
+
+:root {
+  --bg:       #f5f1ea;
+  --fg:       #1a1a18;
+  --accent:   #c8a96e;
+  --muted:    #9e9b94;
+  --card:     #ffffff;
+  --border:   #e2ddd5;
+  --overlay:  rgba(20, 18, 14, 0.72);
+}
+
+/* ─── RESET ─────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body.no-scroll { overflow: hidden; }
+
+/* ─── TYPOGRAPHIE ───────────────────── */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 700; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+
+em { font-style: italic; color: var(--accent); }
+
+p { color: var(--muted); font-size: 1rem; line-height: 1.75; }
+
+/* ─── BOUTONS ───────────────────────── */
+.btn-primary {
+  display: inline-block;
+  background: var(--fg);
+  color: var(--bg);
+  border: none;
+  padding: 0.85rem 2.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.22s, transform 0.15s, box-shadow 0.22s;
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 169, 110, 0.35);
+}
+
+.btn-learn {
+  background: transparent;
+  border: none;
+  color: var(--fg);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.btn-learn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.btn-learn:hover { color: var(--accent); }
+.btn-learn:hover::after { width: 100%; }
+
+/* ─── NAVIGATION ────────────────────── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 5vw;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(245, 241, 234, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 200;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--fg); }
+
+/* ─── HERO ──────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 5vw 5rem;
+  min-height: 88vh;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-text h1 { margin-bottom: 1.4rem; }
+.hero-text p  { max-width: 440px; margin-bottom: 2.5rem; }
+
+/* Formes géométriques abstraites */
+.hero-visual {
+  position: relative;
+  height: 500px;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shape-1 {
+  width: 320px; height: 320px;
+  background: linear-gradient(135deg, #e8d9bc 0%, #d4b896 100%);
+  top: 10%; left: 10%;
+  animation: float1 7s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 180px; height: 180px;
+  background: var(--fg);
+  bottom: 12%; right: 8%;
+  border-radius: 4px;
+  animation: float2 9s ease-in-out infinite;
+}
+
+.shape-3 {
+  width: 100px; height: 100px;
+  border: 2px solid var(--accent);
+  top: 55%; left: 38%;
+  animation: float3 6s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-18px) rotate(3deg); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(14px) rotate(-4deg); }
+}
+@keyframes float3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-10px) rotate(8deg); }
+}
+
+/* ─── SERVICES ──────────────────────── */
+.services {
+  padding: 6rem 5vw;
+  border-top: 1px solid var(--border);
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+.section-tag {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  font-family: 'DM Sans', monospace;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--border);
+  border: 1.5px solid var(--border);
+}
+
+.service-card {
+  background: var(--bg);
+  padding: 2.8rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: background 0.25s;
+}
+
+.service-card:hover { background: var(--card); }
+
+.service-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+}
+
+.service-card h3 { color: var(--fg); }
+.service-card p   { font-size: 0.9rem; flex: 1; }
+
+/* ─── CHIFFRES ──────────────────────── */
+.numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 5vw;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--fg);
+}
+
+.number-item {
+  flex: 1;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.number-val {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--bg);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.number-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.number-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* ─── CTA ───────────────────────────── */
+.cta-band {
+  padding: 7rem 5vw;
+  text-align: center;
+}
+
+.cta-band h2  { margin-bottom: 1rem; }
+.cta-band p   { margin-bottom: 2.5rem; }
+
+/* ─── FOOTER ────────────────────────── */
+footer {
+  padding: 2.5rem 5vw;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* ═══════════════════════════════════════
+   POP-IN / MODAL
+═══════════════════════════════════════ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+
+  /* État initial : invisible */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--card);
+  border-radius: 4px;
+  padding: 3rem;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  /* Animation d'entrée */
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.modal-close:hover {
+  border-color: var(--fg);
+  color: var(--fg);
+  background: var(--border);
+}
+
+.modal-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+
+.modal h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1.4rem;
+  color: var(--fg);
+}
+
+.modal p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.modal-list {
+  list-style: none;
+  margin: 1.2rem 0 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.modal-list li {
+  font-size: 0.92rem;
+  color: var(--fg);
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.modal-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.modal-pricing {
+  font-size: 0.88rem !important;
+  color: var(--muted) !important;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem !important;
+}
+
+.modal-pricing strong { color: var(--fg); }
+
+/* ─── MODAL WIDE (studio photo) ────── */
+.modal-wide { max-width: 680px; }
+
+.modal-photo-wrap {
+  margin: -3rem -3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+  height: 260px;
+}
+
+.modal-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.modal-photo:hover { transform: scale(1.03); }
+
+.modal-photo-caption {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.8rem;
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.6);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ─── FORMULAIRE CONTACT ────────────── */
+.form-group {
+  margin-bottom: 1.3rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.required { color: var(--accent); }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  color: var(--fg);
+  padding: 0.72rem 1rem;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--fg);
+  box-shadow: 0 0 0 3px rgba(26,26,24,0.06);
+}
+
+.form-group input.input-error,
+.form-group select.input-error,
+.form-group textarea.input-error {
+  border-color: #d94f4f;
+  box-shadow: 0 0 0 3px rgba(217,79,79,0.08);
+}
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.field-error {
+  display: none;
+  font-size: 0.75rem;
+  color: #d94f4f;
+  margin-top: 0.35rem;
+}
+
+.global-error {
+  background: rgba(217,79,79,0.07);
+  border: 1px solid rgba(217,79,79,0.3);
+  color: #d94f4f;
+  padding: 0.7rem 1rem;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+}
+
+/* ─── CONFIRMATION ──────────────────── */
+.success-icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(0,180,100,0.1);
+  border: 2px solid rgba(0,180,100,0.4);
+  color: #00b464;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+/* ─── RESPONSIVE ────────────────────── */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 4rem 5vw;
+    gap: 3rem;
+  }
+
+  .hero-visual { height: 320px; }
+
+  .shape-1 { width: 220px; height: 220px; }
+  .shape-2 { width: 120px; height: 120px; }
+  .shape-3 { width: 70px; height: 70px; }
+
+  .services-grid { grid-template-columns: 1fr; }
+
+  .numbers {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .number-divider { display: none; }
+
+  nav { padding: 1.2rem; }
+  .nav-links { gap: 1.5rem; }
+
+  .modal { padding: 2rem; }
+}
+
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
